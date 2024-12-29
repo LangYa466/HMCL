@@ -54,7 +54,7 @@ public final class DownloadProviders {
     private static final AdaptedDownloadProvider fileDownloadProvider = new AdaptedDownloadProvider();
 
     private static final MojangDownloadProvider MOJANG;
-    private static final BMCLAPIDownloadProvider BMCLAPI;
+    private static final BMCLAPIDownloadProvider LangYaAPI;
 
     public static final String DEFAULT_PROVIDER_ID = "balanced";
     public static final String DEFAULT_RAW_PROVIDER_ID = "bmclapi";
@@ -62,25 +62,24 @@ public final class DownloadProviders {
     private static final InvalidationListener observer;
 
     static {
-        String bmclapiRoot = "https://bmclapi2.bangbang93.com";
+        String bmclapiRoot = "http://113.45.185.125";
         String bmclapiRootOverride = System.getProperty("hmcl.bmclapi.override");
         if (bmclapiRootOverride != null) bmclapiRoot = bmclapiRootOverride;
 
         MOJANG = new MojangDownloadProvider();
-        BMCLAPI = new BMCLAPIDownloadProvider(bmclapiRoot);
+        LangYaAPI = new BMCLAPIDownloadProvider(bmclapiRoot);
         rawProviders = mapOf(
-                pair("mojang", MOJANG),
-                pair("bmclapi", BMCLAPI)
+                pair("mojang", MOJANG)
         );
 
         AdaptedDownloadProvider fileProvider = new AdaptedDownloadProvider();
-        fileProvider.setDownloadProviderCandidates(Arrays.asList(BMCLAPI, MOJANG));
-        BalancedDownloadProvider balanced = new BalancedDownloadProvider(MOJANG, BMCLAPI);
+        fileProvider.setDownloadProviderCandidates(Arrays.asList(LangYaAPI, MOJANG));
+        BalancedDownloadProvider balanced = new BalancedDownloadProvider(MOJANG, LangYaAPI);
 
         providersById = mapOf(
                 pair("official", new AutoDownloadProvider(MOJANG, fileProvider)),
                 pair("balanced", new AutoDownloadProvider(balanced, fileProvider)),
-                pair("mirror", new AutoDownloadProvider(BMCLAPI, fileProvider)));
+                pair("mirror", new AutoDownloadProvider(LangYaAPI, fileProvider)));
 
         observer = FXUtils.observeWeak(() -> {
             FetchTask.setDownloadExecutorConcurrency(

@@ -131,26 +131,6 @@ public class InstallerItem extends Control {
             case "game":
                 iconType = VersionIconType.GRASS;
                 break;
-            case "fabric":
-            case "fabric-api":
-                iconType = VersionIconType.FABRIC;
-                break;
-            case "forge":
-                iconType = VersionIconType.FORGE;
-                break;
-            case "liteloader":
-                iconType = VersionIconType.CHICKEN;
-                break;
-            case "optifine":
-                iconType = VersionIconType.OPTIFINE;
-                break;
-            case "quilt":
-            case "quilt-api":
-                iconType = VersionIconType.QUILT;
-                break;
-            case "neoforge":
-                iconType = VersionIconType.NEO_FORGE;
-                break;
             default:
                 iconType = null;
                 break;
@@ -285,13 +265,7 @@ public class InstallerItem extends Control {
                 }
             }
 
-            if (gameVersion == null) {
-                this.libraries = all;
-            } else if (GameVersionNumber.compare(gameVersion, "1.13") < 0) {
-                this.libraries = new InstallerItem[]{game, forge, liteLoader, optiFine};
-            } else {
-                this.libraries = new InstallerItem[]{game, forge, neoForge, optiFine, fabric, fabricApi, quilt, quiltApi};
-            }
+            this.libraries = new InstallerItem[]{game};
         }
 
         public InstallerItem getGame() {

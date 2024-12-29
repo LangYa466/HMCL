@@ -367,18 +367,18 @@ public class GameCrashWindow extends Stage {
                 moddedPane.setPadding(new Insets(8));
                 moddedPane.setAlignment(Pos.CENTER_LEFT);
 
-                for (LibraryAnalyzer.LibraryType type : LibraryAnalyzer.LibraryType.values()) {
-                    if (!type.getPatchId().isEmpty()) {
-                        analyzer.getVersion(type).ifPresent(ver -> {
-                            TwoLineListItem item = new TwoLineListItem();
-                            item.getStyleClass().setAll("two-line-item-second-large");
-                            item.setTitle(i18n("install.installer." + type.getPatchId()));
-                            item.setSubtitle(ver);
-                            moddedPane.getChildren().add(item);
-                        });
-                    }
+                LibraryAnalyzer.LibraryType type = LibraryAnalyzer.LibraryType.MINECRAFT;
+                if (!type.getPatchId().isEmpty()) {
+                    analyzer.getVersion(type).ifPresent(ver -> {
+                        TwoLineListItem item = new TwoLineListItem();
+                        item.getStyleClass().setAll("two-line-item-second-large");
+                        item.setTitle(i18n("install.installer." + type.getPatchId()));
+                        item.setSubtitle(ver);
+                        moddedPane.getChildren().add(item);
+                    });
                 }
             }
+
 
             VBox gameDirPane = new VBox(8);
             {

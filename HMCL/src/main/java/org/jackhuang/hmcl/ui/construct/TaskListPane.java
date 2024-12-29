@@ -124,22 +124,6 @@ public final class TaskListPane extends StackPane {
                     task.setName(i18n("assets.download_all"));
                 } else if (task instanceof GameInstallTask) {
                     task.setName(i18n("install.installer.install", i18n("install.installer.game")));
-                } else if (task instanceof ForgeNewInstallTask || task instanceof ForgeOldInstallTask) {
-                    task.setName(i18n("install.installer.install", i18n("install.installer.forge")));
-                } else if (task instanceof NeoForgeInstallTask || task instanceof NeoForgeOldInstallTask) {
-                    task.setName(i18n("install.installer.install", i18n("install.installer.neoforge")));
-                } else if (task instanceof LiteLoaderInstallTask) {
-                    task.setName(i18n("install.installer.install", i18n("install.installer.liteloader")));
-                } else if (task instanceof OptiFineInstallTask) {
-                    task.setName(i18n("install.installer.install", i18n("install.installer.optifine")));
-                } else if (task instanceof FabricInstallTask) {
-                    task.setName(i18n("install.installer.install", i18n("install.installer.fabric")));
-                } else if (task instanceof FabricAPIInstallTask) {
-                    task.setName(i18n("install.installer.install", i18n("install.installer.fabric-api")));
-                } else if (task instanceof QuiltInstallTask) {
-                    task.setName(i18n("install.installer.install", i18n("install.installer.quilt")));
-                } else if (task instanceof QuiltAPIInstallTask) {
-                    task.setName(i18n("install.installer.install", i18n("install.installer.quilt-api")));
                 } else if (task instanceof CurseCompletionTask || task instanceof ModrinthCompletionTask || task instanceof ServerModpackCompletionTask || task instanceof McbbsModpackCompletionTask) {
                     task.setName(i18n("modpack.completion"));
                 } else if (task instanceof ModpackInstallTask) {

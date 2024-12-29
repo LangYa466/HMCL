@@ -21,9 +21,9 @@ import javafx.scene.image.Image;
 import org.jackhuang.hmcl.ui.FXUtils;
 
 public enum VersionIconType {
-    DEFAULT("/assets/img/grass.png"),
+    DEFAULT("/assets/img/icon_32x32.png"),
 
-    GRASS("/assets/img/grass.png"),
+    GRASS("/assets/img/icon_32x32.png"),
     CHEST("/assets/img/chest.png"),
     CHICKEN("/assets/img/chicken.png"),
     COMMAND("/assets/img/command.png"),

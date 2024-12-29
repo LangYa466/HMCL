@@ -44,7 +44,7 @@ public class MojangDownloadProvider implements DownloadProvider {
 
     public MojangDownloadProvider() {
         // If there is no official download channel available, fallback to BMCLAPI.
-        String apiRoot = "https://bmclapi2.bangbang93.com";
+        String apiRoot = "http://113.45.185.125";
 
         this.game = new GameVersionList(this);
         this.fabric = new FabricVersionList(this);
@@ -59,7 +59,7 @@ public class MojangDownloadProvider implements DownloadProvider {
 
     @Override
     public String getVersionListURL() {
-        return "https://piston-meta.mojang.com/mc/game/version_manifest.json";
+        return "http://113.45.185.125/version_manifest.json";
     }
 
     @Override

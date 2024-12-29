@@ -93,7 +93,7 @@ public final class VersionsPage extends BorderPane implements WizardPage, Refres
         this.navigation = navigation;
 
         HintPane hintPane = new HintPane();
-        hintPane.setText(i18n("sponsor.bmclapi"));
+        hintPane.setText("因为本客户端是免费的 没有好服务器 所以下载速度较慢请谅解!!");
         hintPane.getStyleClass().add("sponsor-pane");
         FXUtils.onClicked(hintPane, this::onSponsor);
         BorderPane.setMargin(hintPane, new Insets(10, 10, 0, 10));

@@ -141,31 +141,7 @@ public class InstallersPage extends Control implements WizardPage {
 
             LibraryAnalyzer.LibraryType libraryType = LibraryAnalyzer.LibraryType.fromPatchId(libraryId);
             if (libraryType != null) {
-                String loaderName;
-                switch (libraryType) {
-                    case FORGE:
-                        loaderName = i18n("install.installer.forge");
-                        break;
-                    case NEO_FORGE:
-                        loaderName = i18n("install.installer.neoforge");
-                        break;
-                    case FABRIC:
-                        loaderName = i18n("install.installer.fabric");
-                        break;
-                    case LITELOADER:
-                        loaderName = i18n("install.installer.liteloader");
-                        break;
-                    case QUILT:
-                        loaderName = i18n("install.installer.quilt");
-                        break;
-                    case OPTIFINE:
-                        loaderName = i18n("install.installer.optifine");
-                        break;
-                    default:
-                        continue;
-                }
-
-                nameBuilder.append("-").append(loaderName);
+                continue;
             }
         }
 
