@@ -69,6 +69,7 @@ public final class SettingsPage extends SettingsView {
                                 .orElse(i18n("launcher.cache_directory.disabled")),
                         config().commonDirectoryProperty(), config().commonDirTypeProperty()));
 
+        /*
         // ==== Update ====
         FXUtils.installFastTooltip(btnUpdate, i18n("update.tooltip"));
         updateListener = any -> {
@@ -99,6 +100,8 @@ public final class SettingsPage extends SettingsView {
         UpdateChecker.checkingUpdateProperty().addListener(new WeakInvalidationListener(updateListener));
         updateListener.invalidated(null);
 
+
+         */
         ToggleGroup updateChannelGroup = new ToggleGroup();
         chkUpdateDev.setToggleGroup(updateChannelGroup);
         chkUpdateDev.setUserData(UpdateChannel.DEVELOPMENT);
